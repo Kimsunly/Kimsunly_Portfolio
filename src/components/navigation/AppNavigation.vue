@@ -126,57 +126,115 @@ onUnmounted(() => {
       <button
         class="md:hidden flex items-center justify-center w-10 h-10 text-text-secondary hover:text-text-primary transition-colors duration-150"
         @click="toggleMobile"
-        :aria-label="mobileOpen ? t('nav.closeMenu') : t('nav.openMenu')"
+        :aria-label="t('nav.openMenu')"
         :aria-expanded="mobileOpen"
       >
-        <Menu v-if="!mobileOpen" :size="20" aria-hidden="true" />
-        <X v-else :size="20" aria-hidden="true" />
+        <Menu :size="20" aria-hidden="true" />
       </button>
     </nav>
 
-    <div
-      v-if="mobileOpen"
-      class="md:hidden fixed inset-0 top-[72px] bg-background/95 backdrop-blur-md z-dropdown"
-      @click="closeMobile"
-    >
+    <!-- Backdrop Overlay -->
+    <Transition name="fade">
       <div
-        class="flex flex-col gap-6 p-8"
+        v-if="mobileOpen"
+        class="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-dropdown"
+        @click="closeMobile"
+      />
+    </Transition>
+
+    <!-- Offcanvas Drawer -->
+    <Transition name="slide">
+      <div
+        v-if="mobileOpen"
+        class="md:hidden fixed top-0 right-0 bottom-0 w-[280px] sm:w-[320px] bg-background border-l border-border shadow-2xl z-modal p-24 flex flex-col justify-between"
         role="dialog"
         :aria-label="t('nav.mobileNav')"
         @click.stop
       >
-        <a
-          v-for="link in links"
-          :key="link.href"
-          :href="link.href"
-          class="text-h4 font-medium text-text-secondary hover:text-text-primary transition-colors duration-150"
-          @click="closeMobile"
-        >
-          {{ link.label }}
-        </a>
-        <div class="mt-4 pt-4 border-t border-border space-y-4">
-          <div class="flex items-center gap-3">
+        <div>
+          <!-- Drawer Header with close button -->
+          <div class="flex items-center justify-between pb-16 border-b border-border/60">
+            <span class="font-mono text-body font-medium text-text-primary">LK_</span>
             <button
-              class="w-10 h-10 flex items-center justify-center rounded-button border border-border text-text-muted hover:text-text-primary hover:border-primary/40 transition-all duration-150"
-              @click="colorMode = colorMode === 'dark' ? 'light' : 'dark'"
-              :aria-label="t('nav.switchTheme', { mode: colorMode === 'dark' ? 'light' : 'dark' })"
+              class="flex items-center justify-center w-8 h-8 text-text-secondary hover:text-text-primary transition-colors"
+              @click="closeMobile"
+              :aria-label="t('nav.closeMenu')"
             >
-              <Sun v-if="colorMode === 'dark'" :size="16" aria-hidden="true" />
-              <Moon v-else :size="16" aria-hidden="true" />
-            </button>
-            <button
-              class="w-10 h-10 flex items-center justify-center rounded-button border border-border text-text-muted hover:text-text-primary hover:border-primary/40 transition-all duration-150 font-mono text-small font-medium"
-              @click="toggleLocale"
-              :aria-label="t('nav.switchLocale', { locale: locale === 'en' ? 'Khmer' : 'English' })"
-            >
-              {{ locale === 'en' ? 'EN' : 'KH' }}
+              <X :size="20" />
             </button>
           </div>
-          <UiButton variant="secondary" href="/Ly-Kimsun-Backend-Software-Engineer-Resume.pdf">
+
+          <!-- Links List -->
+          <div class="flex flex-col gap-6 py-24">
+            <a
+              v-for="link in links"
+              :key="link.href"
+              :href="link.href"
+              :class="[
+                'text-body font-medium transition-colors duration-150 py-2',
+                visibleSection === link.id ? 'text-primary' : 'text-text-secondary hover:text-text-primary'
+              ]"
+              @click="closeMobile"
+            >
+              {{ link.label }}
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Utilities (Theme, Locale, Resume, Online Status) -->
+        <div class="pt-24 border-t border-border space-y-6">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <button
+                class="w-10 h-10 flex items-center justify-center rounded-button border border-border text-text-muted hover:text-text-primary hover:border-primary/40 transition-all duration-150"
+                @click="colorMode = colorMode === 'dark' ? 'light' : 'dark'"
+                :aria-label="t('nav.switchTheme', { mode: colorMode === 'dark' ? 'light' : 'dark' })"
+              >
+                <Sun v-if="colorMode === 'dark'" :size="16" aria-hidden="true" />
+                <Moon v-else :size="16" aria-hidden="true" />
+              </button>
+              <button
+                class="w-10 h-10 flex items-center justify-center rounded-button border border-border text-text-muted hover:text-text-primary hover:border-primary/40 transition-all duration-150 font-mono text-small font-medium"
+                @click="toggleLocale"
+                :aria-label="t('nav.switchLocale', { locale: locale === 'en' ? 'Khmer' : 'English' })"
+              >
+                {{ locale === 'en' ? 'EN' : 'KH' }}
+              </button>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-success before:absolute before:inset-0 before:rounded-full before:animate-ping before:opacity-40 before:bg-success" aria-hidden="true" />
+              <span class="font-mono text-tech-label uppercase tracking-[0.08em] text-success">{{ t('nav.online') }}</span>
+            </div>
+          </div>
+
+          <UiButton variant="secondary" class="w-full justify-center" href="/Ly-Kimsun-Backend-Software-Engineer-Resume.pdf">
             {{ t('nav.resume') }}
           </UiButton>
         </div>
       </div>
-    </div>
+    </Transition>
   </header>
 </template>
+
+<style scoped>
+/* Fade Transition for Backdrop */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Slide Transition for Offcanvas Drawer */
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(100%);
+}
+</style>
