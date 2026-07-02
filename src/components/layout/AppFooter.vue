@@ -34,7 +34,7 @@ onMounted(() => {
 
 <template>
   <footer class="border-t border-border" role="contentinfo">
-    <div class="mx-auto max-w-maximum px-24 sm:px-16 md:px-32 py-16">
+    <div class="mx-auto max-w-maximum px-24 sm:px-32 md:px-48 lg:px-64 py-16">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
         <div class="md:col-span-2">
           <a

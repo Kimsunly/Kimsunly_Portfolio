@@ -104,7 +104,7 @@
   }
 
   .container-grid {
-    @apply mx-auto px-24 sm:px-16 md:px-32 max-w-large;
+    @apply mx-auto px-24 sm:px-32 md:px-48 lg:px-64 max-w-large;
   }
 
   .grid-desktop {

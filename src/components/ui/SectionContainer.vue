@@ -13,7 +13,7 @@ withDefaults(defineProps<{
 })
 
 const sectionSpacing = 'py-40 md:py-30 sm:py-24'
-const containerWidth = 'mx-auto px-24 sm:px-16 md:px-32'
+const containerWidth = 'mx-auto px-24 sm:px-32 md:px-48 lg:px-64'
 </script>
 
 <template>

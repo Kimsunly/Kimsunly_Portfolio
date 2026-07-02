@@ -81,7 +81,7 @@ onUnmounted(() => {
     role="banner"
   >
     <nav
-      class="flex items-center justify-between h-[72px] mx-auto px-24 sm:px-16 md:px-32 max-w-maximum"
+      class="flex items-center justify-between h-[72px] mx-auto px-24 sm:px-32 md:px-48 lg:px-64 max-w-maximum"
       role="navigation"
       aria-label="Main navigation"
     >

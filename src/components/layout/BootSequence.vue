@@ -15,7 +15,7 @@ const { visible, lines, progress, complete } = useBootSequence()
       role="status"
       :aria-label="t('boot.ariaLabel')"
     >
-      <div class="max-w-[400px] w-full px-24 sm:px-16 md:px-32">
+      <div class="max-w-[400px] w-full px-24 sm:px-32 md:px-48 lg:px-64">
         <div class="font-mono text-small text-text-secondary space-y-1.5">
           <div
             v-for="(line, index) in lines"
