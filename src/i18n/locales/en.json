@@ -301,10 +301,13 @@
     "description": "An interactive playground showcasing system-level health, mock REST APIs, and database query consoles.",
     "quote": "A system is only as good as its observability.",
     "tabs": {
-      "monitor": "System Monitor",
+      "monitor":    "System Monitor",
       "playground": "API Sandbox",
-      "sql": "SQL Explorer",
-      "terminal": "Developer CLI"
+      "sql":        "SQL Explorer",
+      "terminal":   "Developer CLI",
+      "seo":        "SEO Preview",
+      "jwt":        "JWT Decoder",
+      "pentest":    "Pentest Lab"
     },
     "monitor": {
       "serverStatus": "SERVER STATUS: ONLINE",

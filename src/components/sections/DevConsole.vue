@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Activity, Send, Database, Terminal } from '@lucide/vue'
+import { Activity, Send, Database, Terminal, Search, Key, Shield } from '@lucide/vue'
 import SectionContainer from '@/components/ui/SectionContainer.vue'
 import UiLabel from '@/components/ui/UiLabel.vue'
 import UiHeading from '@/components/ui/UiHeading.vue'
@@ -10,19 +10,25 @@ import SysMonitor from '@/components/dashboard/SysMonitor.vue'
 import ApiPlayground from '@/components/dashboard/ApiPlayground.vue'
 import SqlExplorer from '@/components/dashboard/SqlExplorer.vue'
 import TerminalWidget from '@/components/dashboard/TerminalWidget.vue'
+import SeoPreview from '@/components/dashboard/SeoPreview.vue'
+import JwtDecoder from '@/components/dashboard/JwtDecoder.vue'
+import PentestLab from '@/components/dashboard/PentestLab.vue'
 import { useReducedMotion } from '@/composables/useReducedMotion'
 
 const { t } = useI18n()
 const { reducedMotion } = useReducedMotion()
 const sectionRef = ref<HTMLElement | null>(null)
 const visible = ref(false)
-const activeTab = ref<'monitor' | 'playground' | 'sql' | 'terminal'>('monitor')
+const activeTab = ref<'monitor' | 'playground' | 'sql' | 'terminal' | 'seo' | 'jwt' | 'pentest'>('monitor')
 
 const tabs = [
-  { id: 'monitor', label: 'devConsole.tabs.monitor', icon: Activity },
-  { id: 'playground', label: 'devConsole.tabs.playground', icon: Send },
-  { id: 'sql', label: 'devConsole.tabs.sql', icon: Database },
-  { id: 'terminal', label: 'devConsole.tabs.terminal', icon: Terminal },
+  { id: 'monitor',   label: 'devConsole.tabs.monitor',   icon: Activity },
+  { id: 'playground',label: 'devConsole.tabs.playground', icon: Send     },
+  { id: 'sql',       label: 'devConsole.tabs.sql',        icon: Database  },
+  { id: 'terminal',  label: 'devConsole.tabs.terminal',   icon: Terminal  },
+  { id: 'seo',       label: 'devConsole.tabs.seo',        icon: Search    },
+  { id: 'jwt',       label: 'devConsole.tabs.jwt',        icon: Key       },
+  { id: 'pentest',   label: 'devConsole.tabs.pentest',    icon: Shield    },
 ] as const
 
 onMounted(() => {
@@ -92,9 +98,12 @@ onMounted(() => {
         <div class="p-6 md:p-8 min-h-[460px] flex flex-col justify-stretch bg-surface/50">
           <KeepAlive>
             <component :is="
-              activeTab === 'monitor' ? SysMonitor :
-              activeTab === 'playground' ? ApiPlayground :
-              activeTab === 'sql' ? SqlExplorer :
+              activeTab === 'monitor'    ? SysMonitor    :
+              activeTab === 'playground' ? ApiPlayground  :
+              activeTab === 'sql'        ? SqlExplorer    :
+              activeTab === 'seo'        ? SeoPreview     :
+              activeTab === 'jwt'        ? JwtDecoder     :
+              activeTab === 'pentest'    ? PentestLab     :
               TerminalWidget
             " />
           </KeepAlive>

@@ -1,0 +1,275 @@
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue'
+import { Search, Globe, Copy, CheckCircle, AlertCircle, XCircle, FileText } from '@lucide/vue'
+
+// --- Pre-filled with real portfolio SEO data ---
+const title       = ref('Ly Kimsun | Backend-Focused Software Engineer | Node.js • Express • Vue.js')
+const description = ref('Backend-focused software engineer specializing in Node.js, Express.js, REST APIs, database design, authentication, and scalable software systems.')
+const site        = ref('lykimsun.dev')
+const slug        = ref('')
+const ogTitle     = ref('')
+const ogDesc      = ref('')
+const robots      = ref('index, follow')
+const copied      = ref(false)
+
+// --- Derived display values ---
+const displayTitle = computed(() => ogTitle.value.trim() || title.value.trim() || 'Page Title')
+const displayDesc  = computed(() => ogDesc.value.trim() || description.value.trim() || 'Meta description will appear here.')
+const displayUrl   = computed(() => {
+  const base = site.value.replace(/^https?:\/\//, '').replace(/\/$/, '') || 'example.com'
+  const path = slug.value.trim() ? `/${slug.value.trim().replace(/\s+/g, '-').toLowerCase()}` : ''
+  return `${base}${path}`
+})
+const displayBreadcrumb = computed(() => {
+  const parts = displayUrl.value.split('/')
+  return parts.join(' › ')
+})
+
+// --- SEO Score ---
+const titleLen = computed(() => title.value.trim().length)
+const descLen  = computed(() => description.value.trim().length)
+const titleOk  = computed(() => titleLen.value >= 30 && titleLen.value <= 60)
+const descOk   = computed(() => descLen.value  >= 70 && descLen.value  <= 160)
+const slugOk   = computed(() => slug.value.trim().length > 0)
+const keyOk    = computed(() => description.value.toLowerCase().includes('node') || description.value.toLowerCase().includes('backend') || description.value.toLowerCase().includes('api'))
+
+const seoScore = computed(() => {
+  let s = 0
+  if (titleOk.value) s += 30
+  else if (titleLen.value > 0) s += 10
+  if (descOk.value)  s += 35
+  else if (descLen.value > 0) s += 12
+  if (slugOk.value)  s += 20
+  if (keyOk.value)   s += 15
+  return s
+})
+
+const scoreColor = computed(() => {
+  if (seoScore.value >= 80) return '#22c55e'
+  if (seoScore.value >= 50) return '#f59e0b'
+  return '#ef4444'
+})
+
+const scoreLabel = computed(() => {
+  if (seoScore.value >= 80) return 'Excellent'
+  if (seoScore.value >= 50) return 'Needs Work'
+  return 'Poor'
+})
+
+// --- Title truncation for SERP preview ---
+const previewTitle = computed(() => {
+  const t = title.value.trim() || 'Page Title'
+  return t.length > 60 ? t.slice(0, 57) + '...' : t
+})
+const previewDesc = computed(() => {
+  const d = description.value.trim() || 'Meta description will appear here...'
+  return d.length > 155 ? d.slice(0, 152) + '...' : d
+})
+
+// --- Copy HTML meta tags ---
+function copyMeta() {
+  const meta = [
+    `<title>${title.value}</title>`,
+    `<meta name="description" content="${description.value}" />`,
+    `<meta name="robots" content="${robots.value}" />`,
+    ogTitle.value ? `<meta property="og:title" content="${ogTitle.value}" />` : '',
+    ogDesc.value  ? `<meta property="og:description" content="${ogDesc.value}" />` : '',
+    `<link rel="canonical" href="https://${displayUrl.value}" />`,
+  ].filter(Boolean).join('\n')
+
+  navigator.clipboard.writeText(meta).then(() => {
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 2000)
+  })
+}
+
+// Title char pill color
+function titlePillClass(len: number, min: number, max: number) {
+  if (len === 0) return 'text-text-muted'
+  if (len < min) return 'text-yellow-400'
+  if (len <= max) return 'text-green-400'
+  return 'text-red-400'
+}
+</script>
+
+<template>
+  <div class="flex flex-col gap-5 w-full">
+    <!-- Header row -->
+    <div class="flex items-center justify-between flex-wrap gap-3">
+      <div class="flex items-center gap-2">
+        <Search :size="16" class="text-primary" />
+        <span class="font-mono text-small text-primary font-semibold tracking-widest uppercase">SEO Preview Studio</span>
+      </div>
+      <button
+        @click="copyMeta"
+        class="flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-surface text-small font-mono text-text-muted hover:text-text-primary hover:border-primary transition-all duration-150"
+      >
+        <Copy :size="13" />
+        <span>{{ copied ? 'Copied!' : 'Copy HTML Tags' }}</span>
+      </button>
+    </div>
+
+    <!-- Main layout: left editor + right preview -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+      <!-- LEFT: Editor fields -->
+      <div class="flex flex-col gap-4">
+
+        <!-- Page Title -->
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between">
+            <label class="font-mono text-xs text-text-muted uppercase tracking-widest flex items-center gap-1.5">
+              <FileText :size="12" /> Page Title
+            </label>
+            <span :class="['font-mono text-xs transition-colors', titlePillClass(titleLen, 30, 60)]">
+              {{ titleLen }} / 60
+            </span>
+          </div>
+          <input
+            v-model="title"
+            type="text"
+            placeholder="Enter your page title…"
+            class="w-full bg-surface border border-border rounded-lg px-3 py-2 font-mono text-xs text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors"
+          />
+          <div class="h-1 rounded-full bg-border overflow-hidden">
+            <div
+              class="h-full rounded-full transition-all duration-300"
+              :style="{ width: Math.min(titleLen / 60 * 100, 100) + '%', background: scoreColor }"
+            />
+          </div>
+          <p class="text-xs text-text-muted">Aim for 30–60 characters for best results</p>
+        </div>
+
+        <!-- Meta Description -->
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between">
+            <label class="font-mono text-xs text-text-muted uppercase tracking-widest">Meta Description</label>
+            <span :class="['font-mono text-xs transition-colors', titlePillClass(descLen, 70, 160)]">
+              {{ descLen }} / 160
+            </span>
+          </div>
+          <textarea
+            v-model="description"
+            rows="3"
+            placeholder="Write a compelling description…"
+            class="w-full bg-surface border border-border rounded-lg px-3 py-2 font-mono text-xs text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors resize-none"
+          />
+          <div class="h-1 rounded-full bg-border overflow-hidden">
+            <div
+              class="h-full rounded-full transition-all duration-300"
+              :style="{ width: Math.min(descLen / 160 * 100, 100) + '%', background: scoreColor }"
+            />
+          </div>
+        </div>
+
+        <!-- URL -->
+        <div class="grid grid-cols-2 gap-3">
+          <div class="flex flex-col gap-1.5">
+            <label class="font-mono text-xs text-text-muted uppercase tracking-widest">Domain</label>
+            <input v-model="site" type="text" placeholder="example.com"
+              class="w-full bg-surface border border-border rounded-lg px-3 py-2 font-mono text-xs text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors" />
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="font-mono text-xs text-text-muted uppercase tracking-widest">URL Slug</label>
+            <input v-model="slug" type="text" placeholder="page-slug"
+              class="w-full bg-surface border border-border rounded-lg px-3 py-2 font-mono text-xs text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors" />
+          </div>
+        </div>
+
+        <!-- OG Title + Robots (compact) -->
+        <div class="grid grid-cols-2 gap-3">
+          <div class="flex flex-col gap-1.5">
+            <label class="font-mono text-xs text-text-muted uppercase tracking-widest">OG Title</label>
+            <input v-model="ogTitle" type="text" placeholder="(uses page title)"
+              class="w-full bg-surface border border-border rounded-lg px-3 py-2 font-mono text-xs text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors" />
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="font-mono text-xs text-text-muted uppercase tracking-widest">Robots</label>
+            <select v-model="robots"
+              class="w-full bg-surface border border-border rounded-lg px-3 py-2 font-mono text-xs text-text-primary focus:outline-none focus:border-primary transition-colors">
+              <option value="index, follow">index, follow</option>
+              <option value="noindex, follow">noindex, follow</option>
+              <option value="index, nofollow">index, nofollow</option>
+              <option value="noindex, nofollow">noindex, nofollow</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Live Preview + Score -->
+      <div class="flex flex-col gap-4">
+
+        <!-- Google SERP Card -->
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-2 font-mono text-xs text-text-muted uppercase tracking-widest">
+            <Globe :size="12" class="text-primary" />
+            Google SERP Preview
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-1.5 mb-1">
+              <div class="w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">G</div>
+              <span class="text-xs text-gray-600 truncate">{{ displayBreadcrumb }}</span>
+            </div>
+            <!-- Title -->
+            <p class="text-blue-700 text-base font-medium leading-snug hover:underline cursor-pointer truncate">
+              {{ previewTitle }}
+            </p>
+            <!-- Description -->
+            <p class="text-gray-600 text-xs leading-relaxed mt-1 line-clamp-2">
+              {{ previewDesc }}
+            </p>
+          </div>
+        </div>
+
+        <!-- OG Social Preview -->
+        <div class="flex flex-col gap-2">
+          <div class="font-mono text-xs text-text-muted uppercase tracking-widest">Social (OG) Preview</div>
+          <div class="bg-[#f0f2f5] rounded-xl overflow-hidden border border-gray-200">
+            <div class="h-16 bg-gradient-to-r from-violet-600 to-indigo-700 flex items-center justify-center">
+              <span class="text-white font-bold text-lg tracking-wide">{{ site.replace(/^https?:\/\//, '') || 'lykimsun.dev' }}</span>
+            </div>
+            <div class="p-3">
+              <p class="text-[11px] text-gray-500 uppercase tracking-wider">{{ site.replace(/^https?:\/\//, '') || 'lykimsun.dev' }}</p>
+              <p class="text-gray-900 font-semibold text-sm leading-snug mt-0.5 line-clamp-1">{{ displayTitle }}</p>
+              <p class="text-gray-500 text-xs leading-relaxed mt-0.5 line-clamp-2">{{ displayDesc }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEO Score -->
+        <div class="bg-surface border border-border rounded-xl p-4 flex items-start gap-4">
+          <!-- Ring -->
+          <div class="relative flex-shrink-0 w-16 h-16">
+            <svg viewBox="0 0 52 52" width="64" height="64" class="-rotate-90">
+              <circle cx="26" cy="26" r="22" fill="none" stroke="#1e1e2e" stroke-width="4" />
+              <circle cx="26" cy="26" r="22" fill="none" :stroke="scoreColor" stroke-width="4"
+                stroke-linecap="round"
+                :stroke-dasharray="138.2"
+                :stroke-dashoffset="138.2 - (seoScore / 100 * 138.2)"
+                style="transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease" />
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="font-mono text-sm font-bold" :style="{ color: scoreColor }">{{ seoScore }}</span>
+            </div>
+          </div>
+          <!-- Checklist -->
+          <div class="flex-1 flex flex-col gap-1.5">
+            <div class="font-mono text-xs font-semibold" :style="{ color: scoreColor }">{{ scoreLabel }}</div>
+            <div v-for="item in [
+              { ok: titleOk, label: 'Title length (30–60 chars)' },
+              { ok: descOk,  label: 'Description (70–160 chars)' },
+              { ok: slugOk,  label: 'URL slug defined' },
+              { ok: keyOk,   label: 'Keywords in description' },
+            ]" :key="item.label" class="flex items-center gap-2">
+              <CheckCircle v-if="item.ok"  :size="13" class="text-green-400 flex-shrink-0" />
+              <XCircle     v-else          :size="13" class="text-red-400 flex-shrink-0" />
+              <span class="font-mono text-xs" :class="item.ok ? 'text-text-primary' : 'text-text-muted'">{{ item.label }}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
