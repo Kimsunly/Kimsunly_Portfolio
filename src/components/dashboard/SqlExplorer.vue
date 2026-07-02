@@ -254,7 +254,7 @@ runQuery()
     </div>
 
     <!-- SQL Results Data Grid (Right) -->
-    <div class="lg:col-span-7 flex flex-col border border-border bg-surface-elevated/10 rounded-panel overflow-hidden">
+    <div class="lg:col-span-7 flex flex-col border border-border bg-surface-elevated/10 rounded-panel min-w-0">
       <!-- Status Header -->
       <div class="flex flex-wrap items-center gap-4 px-4 py-2 border-b border-border bg-surface-elevated/40 justify-between font-mono text-caption text-text-secondary">
         <span>{{ t('devConsole.sql.resultsLabel') }}</span>
@@ -294,28 +294,28 @@ runQuery()
         </div>
 
         <!-- Data Grid Table -->
-        <div v-else class="w-full overflow-x-auto select-text selection:bg-primary/20">
-          <table class="w-full font-mono text-[13px] border-collapse">
+        <div v-else class="overflow-x-auto select-text selection:bg-primary/20">
+          <table class="min-w-full font-mono text-[13px] border-collapse">
             <thead>
               <tr class="border-b border-border bg-surface-elevated/40">
-                <th 
-                  v-for="col in resultHeaders" 
-                  :key="col" 
-                  class="text-left px-6 py-4 text-text-secondary uppercase tracking-wider font-semibold"
+                <th
+                  v-for="col in resultHeaders"
+                  :key="col"
+                  class="text-left px-6 py-4 text-text-secondary uppercase tracking-wider font-semibold whitespace-nowrap"
                 >
                   {{ col }}
                 </th>
               </tr>
             </thead>
             <tbody class="divide-y divide-border/30 bg-surface/10">
-              <tr 
-                v-for="(row, idx) in resultRows" 
-                :key="idx" 
+              <tr
+                v-for="(row, idx) in resultRows"
+                :key="idx"
                 class="hover:bg-surface-elevated/20 transition-colors"
               >
-                <td 
-                  v-for="col in resultHeaders" 
-                  :key="col" 
+                <td
+                  v-for="col in resultHeaders"
+                  :key="col"
                   class="px-6 py-3.5 text-text-primary whitespace-nowrap"
                 >
                   {{ row[col] !== null && row[col] !== undefined ? row[col] : 'NULL' }}
@@ -324,6 +324,7 @@ runQuery()
             </tbody>
           </table>
         </div>
+
       </div>
     </div>
   </div>
