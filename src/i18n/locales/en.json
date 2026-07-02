@@ -39,7 +39,7 @@
     "svgCaption": "Architecture Preview"
   },
   "presentations": {
-    "label": "/02 PRESENTATIONS",
+    "label": "/09 PRESENTATIONS",
     "heading": "Moments From the Stage",
     "description": "Project presentations at ANT School — sharing ideas, demoing builds, and learning in public.",
     "alt": "ANT School presentation"
@@ -243,7 +243,7 @@
     ]
   },
   "architecture": {
-    "label": "/07 ARCHITECTURE",
+    "label": "/02-B ARCHITECTURE",
     "heading": "Engineering Reliable Software Systems",
     "description": "Every feature begins with architecture. Every architecture decision affects maintainability, performance, security, and long-term scalability.",
     "quote": "Turning complex systems into simple experiences.",
@@ -282,7 +282,7 @@
     }
   },
   "journey": {
-    "label": "/08 JOURNEY",
+    "label": "/07 JOURNEY",
     "heading": "Engineering Journey",
     "description": "From learning frontend development to leading backend systems — the path that shaped my engineering mindset.",
     "quote": "Engineering scalable backend solutions.",
@@ -343,7 +343,7 @@
     }
   },
   "certificates": {
-    "label": "/09 CERTIFICATES",
+    "label": "/08 CERTIFICATES",
     "heading": "Verified Credentials",
     "description": "Certificates and training programs showing ongoing development in software engineering and backend systems.",
     "quote": "Validation of continuous professional growth.",
