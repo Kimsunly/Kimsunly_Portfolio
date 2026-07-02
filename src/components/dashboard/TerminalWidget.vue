@@ -30,6 +30,9 @@ onMounted(() => {
 function focusInput() {
   if (inputField.value) {
     inputField.value.focus()
+    setTimeout(() => {
+      inputField.value?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }, 100)
   }
 }
 
@@ -88,6 +91,9 @@ function handleCommand() {
     if (terminalBody.value) {
       terminalBody.value.scrollTop = terminalBody.value.scrollHeight
     }
+    setTimeout(() => {
+      inputField.value?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }, 50)
   })
 }
 
