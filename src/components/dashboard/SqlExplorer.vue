@@ -7,27 +7,48 @@ const { t } = useI18n()
 
 // DB Schemas and Data
 const dbTechnologies = [
-  { id: 1, name: 'Node.js', category: 'Frameworks', status: 'active' },
-  { id: 2, name: 'Express.js', category: 'Frameworks', status: 'active' },
-  { id: 3, name: 'MySQL', category: 'Languages', status: 'active' },
-  { id: 4, name: 'Vue.js', category: 'Frameworks', status: 'active' },
-  { id: 5, name: 'Docker', category: 'DevOps', status: 'learning' },
-  { id: 6, name: 'AWS', category: 'DevOps', status: 'learning' },
-  { id: 7, name: 'Redis', category: 'Database', status: 'learning' },
-  { id: 8, name: 'Spring Boot', category: 'Frameworks', status: 'learning' }
+  { id: 1,  name: 'Node.js',         category: 'Frameworks', status: 'active'   },
+  { id: 2,  name: 'Express.js',      category: 'Frameworks', status: 'active'   },
+  { id: 3,  name: 'Vue.js',          category: 'Frameworks', status: 'active'   },
+  { id: 4,  name: 'Next.js',         category: 'Frameworks', status: 'active'   },
+  { id: 5,  name: 'NestJS',          category: 'Frameworks', status: 'learning' },
+  { id: 6,  name: 'React',           category: 'Frameworks', status: 'learning' },
+  { id: 7,  name: 'MySQL',           category: 'Database',   status: 'active'   },
+  { id: 8,  name: 'PostgreSQL',      category: 'Database',   status: 'learning' },
+  { id: 9,  name: 'MongoDB',         category: 'Database',   status: 'learning' },
+  { id: 10, name: 'Redis',           category: 'Database',   status: 'learning' },
+  { id: 11, name: 'TypeScript',      category: 'Languages',  status: 'active'   },
+  { id: 12, name: 'JavaScript',      category: 'Languages',  status: 'active'   },
+  { id: 13, name: 'Python',          category: 'Languages',  status: 'active'   },
+  { id: 14, name: 'Docker',          category: 'DevOps',     status: 'learning' },
+  { id: 15, name: 'Linux',           category: 'DevOps',     status: 'active'   },
+  { id: 16, name: 'Nginx',           category: 'DevOps',     status: 'active'   },
+  { id: 17, name: 'AWS',             category: 'DevOps',     status: 'learning' },
+  { id: 18, name: 'GitHub Actions',  category: 'DevOps',     status: 'learning' },
+  { id: 19, name: 'Git',             category: 'Tools',      status: 'active'   },
+  { id: 20, name: 'Postman',         category: 'Tools',      status: 'active'   },
+  { id: 21, name: 'GraphQL',         category: 'Exploring',  status: 'learning' },
+  { id: 22, name: 'Prisma',          category: 'Exploring',  status: 'learning' },
 ]
 
 const dbProjects = [
-  { id: 1, title: 'ANTPAY', role: 'Backend Developer', organization: 'ANT Tech', featured: 1 },
-  { id: 2, title: 'VETIKA', role: 'Frontend Developer', organization: 'ANT Tech', featured: 0 },
-  { id: 3, title: 'Smakjit', role: 'Full-Stack Developer', organization: 'RUPP', featured: 0 }
+  { id: 1, title: 'ANTPAY',                          role: 'Group Leader & Backend Developer',    organization: 'ANT Tech', featured: 1 },
+  { id: 2, title: 'VETIKA',                          role: 'Group Leader & Frontend Developer',   organization: 'ANT Tech', featured: 1 },
+  { id: 3, title: 'Smakjit (Volunteer)',             role: 'Group Leader & Full-Stack Developer', organization: 'ANT Tech & RUPP', featured: 1 },
+  { id: 4, title: 'Smart Document Q&A Assistant',   role: 'Developer',                           organization: 'Personal Project', featured: 0 },
+  { id: 5, title: 'SEO Preview',                    role: 'Developer',                           organization: 'Academic Coursework', featured: 0 },
+  { id: 6, title: 'Assignment Web',                 role: 'Developer',                           organization: 'Academic Coursework', featured: 0 },
 ]
 
 const dbSystemLogs = [
-  { id: 1, event: 'System initialization completed', ip_address: '127.0.0.1', timestamp: '2026-07-02 10:00:00' },
-  { id: 2, event: 'MySQL DB connection pool established', ip_address: '127.0.0.1', timestamp: '2026-07-02 10:00:02' },
-  { id: 3, event: 'Admin session started', ip_address: '103.20.12.18', timestamp: '2026-07-02 10:12:10' },
-  { id: 4, event: 'POST /api/v1/contact payload validated', ip_address: '103.23.4.15', timestamp: '2026-07-02 10:15:05' }
+  { id: 1, event: 'Portfolio system boot — v1.0 initialized',           ip_address: '127.0.0.1',   timestamp: '2026-07-03 00:00:00' },
+  { id: 2, event: 'MySQL connection pool established (max: 10)',         ip_address: '127.0.0.1',   timestamp: '2026-07-03 00:00:01' },
+  { id: 3, event: 'JWT middleware registered on protected routes',       ip_address: '127.0.0.1',   timestamp: '2026-07-03 00:00:02' },
+  { id: 4, event: 'GET /api/v1/projects — 200 OK (6 records)',          ip_address: '103.20.12.18', timestamp: '2026-07-03 00:12:05' },
+  { id: 5, event: 'GET /api/v1/profile — 200 OK (cache hit)',           ip_address: '103.23.4.15', timestamp: '2026-07-03 00:14:30' },
+  { id: 6, event: 'POST /api/v1/contact — 201 Created',                 ip_address: '103.23.4.21', timestamp: '2026-07-03 00:17:42' },
+  { id: 7, event: 'GET /api/v1/admin/transactions — 401 Unauthorized',  ip_address: '103.99.0.11', timestamp: '2026-07-03 00:19:08' },
+  { id: 8, event: 'Admin session started — role: admin',                ip_address: '103.20.12.18', timestamp: '2026-07-03 00:21:55' },
 ]
 
 // Schema definition overview
