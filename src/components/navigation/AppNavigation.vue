@@ -14,9 +14,9 @@ const mobileOpen = ref(false)
 const visibleSection = ref('')
 
 const links = computed(() => [
-  { label: t('nav.technology'), href: '#technology', id: 'technology' },
-  { label: t('nav.projects'), href: '#projects', id: 'projects' },
   { label: t('nav.console'), href: '#console', id: 'console' },
+  { label: t('nav.projects'), href: '#projects', id: 'projects' },
+  { label: t('nav.technology'), href: '#technology', id: 'technology' },
   { label: t('nav.journey'), href: '#journey', id: 'journey' },
   { label: t('nav.certificates'), href: '#certificates', id: 'certificates' },
   { label: t('nav.contact'), href: '#contact', id: 'contact' },

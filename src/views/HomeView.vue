@@ -14,11 +14,11 @@ const ContactSection = defineAsyncComponent(() => import('@/components/sections/
 
 <template>
   <HeroSection />
-  <TechnologyStack />
+  <DevConsole />
   <AboutSection />
   <FeaturedProjects />
+  <TechnologyStack />
   <EngineeringPrinciples />
-  <DevConsole />
   <JourneyTimeline />
   <CertificatesSection />
   <PresentationsSection />
