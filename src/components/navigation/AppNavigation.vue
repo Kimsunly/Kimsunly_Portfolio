@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useWindowScroll, useIntersectionObserver } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import { Menu, X, Sun, Moon } from '@lucide/vue'
@@ -52,12 +52,21 @@ function handleKeydown(e: KeyboardEvent) {
   }
 }
 
+watch(mobileOpen, (isOpen) => {
+  if (isOpen) {
+    document.body.classList.add('overflow-hidden')
+  } else {
+    document.body.classList.remove('overflow-hidden')
+  }
+})
+
 onMounted(() => {
   document.addEventListener('keydown', handleKeydown)
 })
 
 onUnmounted(() => {
   document.removeEventListener('keydown', handleKeydown)
+  document.body.classList.remove('overflow-hidden')
 })
 </script>
 
@@ -146,7 +155,7 @@ onUnmounted(() => {
     <Transition name="slide">
       <div
         v-if="mobileOpen"
-        class="md:hidden fixed top-0 right-0 bottom-0 w-[280px] sm:w-[320px] bg-background/95 backdrop-blur-md border-l border-border/80 shadow-2xl z-modal p-24 flex flex-col justify-between"
+        class="md:hidden fixed top-0 right-0 bottom-0 w-[280px] sm:w-[320px] bg-surface border-l border-border/80 shadow-2xl z-modal p-24 flex flex-col justify-between"
         role="dialog"
         :aria-label="t('nav.mobileNav')"
         @click.stop
