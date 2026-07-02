@@ -215,7 +215,7 @@
     ]
   },
   "principles": {
-    "label": "/05 ENGINEERING PRINCIPLES",
+    "label": "/06 ENGINEERING PRINCIPLES",
     "heading": "How I Think About Software",
     "description": "These principles guide every architectural decision, every API endpoint, and every line of code I write.",
     "quote": "Clean architecture enables long-term growth.",
@@ -243,7 +243,7 @@
     ]
   },
   "architecture": {
-    "label": "/06 ARCHITECTURE",
+    "label": "/07 ARCHITECTURE",
     "heading": "Engineering Reliable Software Systems",
     "description": "Every feature begins with architecture. Every architecture decision affects maintainability, performance, security, and long-term scalability.",
     "quote": "Turning complex systems into simple experiences.",
@@ -267,7 +267,7 @@
     ]
   },
   "techStack": {
-    "label": "/07 TECHNOLOGY STACK",
+    "label": "/05 TECHNOLOGY STACK",
     "heading": "Tools & Technologies",
     "description": "Technologies I use to build reliable software systems, from API design to deployment.",
     "quote": "Continuous learning is part of engineering.",
@@ -296,7 +296,7 @@
     ]
   },
   "devConsole": {
-    "label": "/06-B OPERATIONS CONSOLE",
+    "label": "/02 OPERATIONS CONSOLE",
     "heading": "Developer & Operations Sandbox",
     "description": "An interactive playground showcasing system-level health, mock REST APIs, and database query consoles.",
     "quote": "A system is only as good as its observability.",
