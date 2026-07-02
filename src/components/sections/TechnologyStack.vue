@@ -74,7 +74,7 @@ async function initScene() {
   const world = new THREE.Group()
   scene.add(world)
   const camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 1000)
-  camera.position.set(0, 0, 150)
+  camera.position.set(0, 0, w < 640 ? 200 : 150)
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true })
   renderer.setSize(w, h)
@@ -295,6 +295,7 @@ async function initScene() {
     camera.updateProjectionMatrix()
     renderer.setSize(w, h)
     composer.setSize(w, h)
+    camera.position.z = w < 640 ? 200 : 150
   }
   window.addEventListener('resize', resize)
 

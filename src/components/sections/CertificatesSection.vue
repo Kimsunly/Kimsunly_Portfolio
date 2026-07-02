@@ -286,14 +286,14 @@ onUnmounted(() => {
         <!-- Navigation Arrows -->
         <button
           @click="prevSlide"
-          class="absolute left-[-16px] lg:left-[-24px] top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-surface border border-border hover:border-primary/50 text-text-secondary hover:text-text-primary hover:bg-surface-elevated hover:scale-105 active:scale-95 transition-all duration-150 shadow-md"
+          class="absolute left-2 sm:left-[-16px] lg:left-[-24px] top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-surface border border-border hover:border-primary/50 text-text-secondary hover:text-text-primary hover:bg-surface-elevated hover:scale-105 active:scale-95 transition-all duration-150 shadow-md"
           aria-label="Previous certificates"
         >
           <ChevronLeft :size="18" />
         </button>
         <button
           @click="nextSlide"
-          class="absolute right-[-16px] lg:right-[-24px] top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-surface border border-border hover:border-primary/50 text-text-secondary hover:text-text-primary hover:bg-surface-elevated hover:scale-105 active:scale-95 transition-all duration-150 shadow-md"
+          class="absolute right-2 sm:right-[-16px] lg:right-[-24px] top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-surface border border-border hover:border-primary/50 text-text-secondary hover:text-text-primary hover:bg-surface-elevated hover:scale-105 active:scale-95 transition-all duration-150 shadow-md"
           aria-label="Next certificates"
         >
           <ChevronRight :size="18" />

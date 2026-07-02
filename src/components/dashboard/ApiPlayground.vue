@@ -383,7 +383,7 @@ async function sendRequest() {
             </div>
           </div>
           <!-- Body -->
-          <pre class="flex-1 p-4 overflow-auto font-mono text-[13px] text-text-primary leading-relaxed bg-surface/30 select-text max-h-[300px]">{{ responseBody }}</pre>
+          <pre class="flex-1 p-4 overflow-auto font-mono text-[13px] text-text-primary leading-relaxed bg-surface/30 select-text max-h-[300px] w-full min-w-0 overflow-x-auto">{{ responseBody }}</pre>
         </div>
       </div>
     </div>

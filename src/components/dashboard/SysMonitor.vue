@@ -144,7 +144,7 @@ onUnmounted(() => {
 <template>
   <div class="flex flex-col gap-8 w-full">
     <!-- Server Status Bar -->
-    <div class="flex items-center justify-between border border-border bg-surface/20 rounded-panel p-6">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-border bg-surface/20 rounded-panel p-16 sm:p-24">
       <div class="flex items-center gap-3">
         <span class="relative flex h-3 w-3">
           <span 
