@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Kantumruy Pro';
+  src: url('/Kantumruy_Pro/static/KantumruyPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kantumruy Pro';
+  src: url('/Kantumruy_Pro/static/KantumruyPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kantumruy Pro';
+  src: url('/Kantumruy_Pro/static/KantumruyPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kantumruy Pro';
+  src: url('/Kantumruy_Pro/static/KantumruyPro-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kantumruy Pro';
+  src: url('/Kantumruy_Pro/static/KantumruyPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+[data-theme='dark'] {
+  --color-background: #0A0A0A;
+  --color-surface: #111111;
+  --color-surface-elevated: #171717;
+  --color-border: #2A2A2A;
+  --color-border-strong: #3A3A3A;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #B4B4B4;
+  --color-text-muted: #7A7A7A;
+}
+
+[data-theme='light'] {
+  --color-background: #F5F6F9;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #ECEEF3;
+  --color-border: #E1E4EC;
+  --color-border-strong: #CBD5E1;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html[data-font="khmer"] body {
+    font-family: Inter, 'Kantumruy Pro', system-ui, sans-serif;
+  }
+
+  html[data-font="khmer"] .font-sans {
+    font-family: Inter, 'Kantumruy Pro', system-ui, sans-serif !important;
+  }
+
+  html[data-font="khmer"] .font-mono {
+    font-family: 'JetBrains Mono', 'Kantumruy Pro', monospace !important;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-tech-label uppercase tracking-[0.12em] text-text-muted;
+  }
+
+  .container-grid {
+    @apply mx-auto px-8 max-w-large;
+  }
+
+  .grid-desktop {
+    @apply grid grid-cols-12 gap-8;
+  }
+
+  .grid-tablet {
+    @apply grid grid-cols-8 gap-8;
+  }
+
+  .grid-mobile {
+    @apply grid grid-cols-4 gap-5;
+  }
+
+  .border-panel {
+    @apply border border-border rounded-panel;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-text-secondary;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .animate-reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1);
+  }
+}

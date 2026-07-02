@@ -1,0 +1,456 @@
+{
+  "nav": {
+    "logo": "LK_",
+    "projects": "Projects",
+    "console": "Console",
+    "technology": "Technology",
+    "journey": "Journey",
+    "certificates": "Certificates",
+    "contact": "Contact",
+    "resume": "Resume",
+    "online": "Online",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileNav": "Mobile navigation",
+    "switchTheme": "Switch to {mode} mode",
+    "switchLocale": "Switch to {locale}"
+  },
+  "hero": {
+    "label": "/01 SYSTEM ONLINE",
+    "name": "LY KIMSUN",
+    "subtitle": "Backend-Focused Software Engineer",
+    "statement": "Building reliable software systems through clean architecture, scalable APIs, and thoughtful engineering.",
+    "description": "I'm passionate about designing backend systems, building secure REST APIs, and creating maintainable full-stack applications that solve real-world problems. From database design to deployment, I enjoy turning complex ideas into reliable software products.",
+    "exploreProjects": "Explore Projects",
+    "viewResume": "View Resume",
+    "statusLabel": "STATUS",
+    "available": "AVAILABLE",
+    "looking": "Looking:",
+    "lookingValue": "Internship / Full-time / Freelance",
+    "location": "Location:",
+    "locationValue": "Cambodia",
+    "focus": "Focus:",
+    "focusValue": "Backend Engineering",
+    "renderingLabel": "RENDERING",
+    "renderingItems": ["Engineering Mindset", "Clean Architecture", "API First", "System Thinking", "Continuous Learning"],
+    "svgClient": "CLIENT",
+    "svgApi": "API",
+    "svgDb": "DB",
+    "svgCaption": "Architecture Preview"
+  },
+  "presentations": {
+    "label": "/02 PRESENTATIONS",
+    "heading": "Moments From the Stage",
+    "description": "Project presentations at ANT School — sharing ideas, demoing builds, and learning in public.",
+    "alt": "ANT School presentation"
+  },
+  "about": {
+    "label": "/03 EDUCATION",
+    "heading": "Academic Background",
+    "gpa": "GPA:",
+    "entries": [
+      {
+        "school": "Royal University of Phnom Penh (RUPP)",
+        "location": "Phnom Penh, Cambodia",
+        "period": "Feb 2024 — Present",
+        "degree": "Bachelor of Information Technology and Engineering (ITE)",
+        "gpa": "3.8 / 4.0",
+        "details": [
+          "Data Structures & Algorithms",
+          "Database Design",
+          "Advanced Programming Language",
+          "Object-Oriented Analysis & Design",
+          "Web Technologies & Cloud Computing",
+          "Operating Systems",
+          "Network Engineering",
+          "Mobile Application Development"
+        ]
+      },
+      {
+        "school": "Ant Technology Training Center",
+        "location": "Phnom Penh, Cambodia",
+        "period": "Jun 2025 — Jul 2026",
+        "degree": "Full-Stack Web Development Program",
+        "details": [
+          "Web Development Fundamentals",
+          "HTML/CSS & Bootstrap",
+          "UI/UX Design",
+          "C++ & OOP",
+          "JavaScript & Vue.js",
+          "MySQL, Node.js & Express & RESTful APIs",
+          "Foundation of Cybersecurity"
+        ]
+      },
+      {
+        "school": "Paññāsāstra University of Cambodia — Institute of Foreign Languages",
+        "location": "Phnom Penh, Cambodia",
+        "period": "Sep 2024",
+        "degree": "English Language Program — Grade 12 Graduate",
+        "details": [
+          "Graduated with High Honors (Grade A all levels) in GESL (General English as a Second Language)"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "label": "/04 FEATURED PROJECTS",
+    "heading": "Engineering Case Studies",
+    "description": "Each project represents real engineering challenges, from database design to production deployment.",
+    "quote": "Backend-first. Product-minded.",
+    "featured": "Featured",
+    "viewCaseStudy": "View Case Study",
+    "live": "Live",
+    "projectPreview": "Project Preview",
+    "showMore": "View Academic Projects",
+    "showLess": "Show Less",
+    "entries": [
+      {
+        "title": "ANTPAY",
+        "organization": "ANT Technology Training Center",
+        "period": "May 2026 — Jul 2026",
+        "role": "Group Leader & Backend Developer",
+        "category": "Payment Management System",
+        "summary": "Full-stack payment management internal system with invoice generation, transaction tracking, RBAC, and bilingual UI (Khmer/English).",
+        "details": [
+          "Led a team of 5 to design and develop a full-stack payment management system featuring invoice generation, transaction tracking, role-based access control (RBAC), and a bilingual (Khmer/English) UI.",
+          "Developed 25+ RESTful APIs using Node.js, Express, and MySQL, implementing JWT authentication, RBAC, invoice management, overdue tracking, expense and budget management, audit logging, centralized error handling, request validation, and reusable API response utilities.",
+          "Designed a normalized MySQL database schema and deployed the application on Linux using PM2 and Nginx, collaborating through Git and GitHub."
+        ],
+        "stack": ["Node.js", "Express", "Vue", "MySQL", "JWT", "PM2", "Nginx"],
+        "images": [
+          "/projects/antpay/dashboard.png",
+          "/projects/antpay/kh-package.png",
+          "/projects/antpay/login.png",
+          "/projects/antpay/overdue.png"
+        ],
+        "featured": true
+      },
+      {
+        "title": "VETIKA",
+        "organization": "ANT Technology Training Center",
+        "period": "Oct 2025 — Feb 2026",
+        "role": "Group Leader & Frontend Developer",
+        "category": "Student Community Platform",
+        "summary": "ANT student community web platform featuring authentication, profile management, news feeds, and real-time messaging.",
+        "details": [
+          "Led a team of five to develop VETIKA, a student community platform with authentication, profile management, news feeds, and real-time messaging.",
+          "Developed the administration module with a Content Management System (CMS), analytics dashboard, role-based management, and CSV/PDF report generation."
+        ],
+        "stack": ["Vue", "Node.js", "MySQL", "REST API"],
+        "github": [
+          { "label": "GitHub (User)", "url": "https://github.com/G4-ANT-NEXTGEN/vetika-user.git" },
+          { "label": "GitHub (Admin)", "url": "https://github.com/G4-ANT-NEXTGEN/vetika-admin.git" }
+        ],
+        "url": [
+          { "label": "Live (User)", "url": "https://nextgen-user-taupe.vercel.app" },
+          { "label": "Live (Admin)", "url": "https://nextgen-admin.vercel.app/login" }
+        ]
+      },
+      {
+        "title": "Smakjit (Volunteer)",
+        "organization": "ANT Technology Training Center & RUPP",
+        "period": "Sep 2025 — Jun 2026",
+        "role": "Group Leader & Full-Stack Developer",
+        "category": "Volunteer Platform",
+        "summary": "Volunteer community platform built from static HTML into a production-ready full-stack application for the RUPP Year 3 capstone project.",
+        "details": [
+          "Built Smakjit from a static HTML/CSS/Bootstrap site into a production-ready full-stack volunteer platform for the RUPP Year 3 capstone project.",
+          "Developed the frontend using Next.js and the backend using PHP/Laravel, implementing volunteer registration, authentication, and project management features."
+        ],
+        "stack": ["Next.js", "Laravel", "PHP", "MySQL"],
+        "github": "https://github.com/Kimsunly/Volunteer-WCT-WEB.git",
+        "url": "https://smakjit.jo3.org"
+      },
+      {
+        "title": "Smart Document Q&A and Workflow Assistant",
+        "organization": "Personal Project",
+        "period": "Jul 2026",
+        "role": "Developer",
+        "category": "AI & Document Intelligence",
+        "summary": "AI-powered smart document assistant integrating text extraction, semantic search, vector databases, and interactive conversational Q&A.",
+        "details": [
+          "Built an AI-powered assistant enabling natural language queries over document repositories using TF-IDF and embedding-based semantic retrieval.",
+          "Integrated Retrieval-Augmented Generation (RAG) to generate context-aware answers, summaries, and verifiable references from uploaded PDFs and Word files.",
+          "Developed a structured data exporter converting unstructured documents into JSON, CSV, searchable OCR PDFs, and multi-sheet Excel files."
+        ],
+        "stack": ["Python", "LangChain", "OpenAI", "RAG", "TF-IDF", "Vector DB", "OCR"],
+        "github": "https://github.com/Kimsunly/Smart-Document-Q-A-and-Workflow-Assistant.git",
+        "url": "https://kimsunly-smart-document-q-a-and-workflow-assistant.hf.space"
+      },
+      {
+        "title": "SEO Preview",
+        "organization": "Academic Coursework (Midterm Exam)",
+        "period": "May 2026",
+        "role": "Developer",
+        "category": "Developer Utility Tool",
+        "summary": "A real-time search engine optimization (SEO) metadata previewer to visualize website search results on Google, Facebook, and Twitter.",
+        "details": [
+          "Built a real-time SEO metadata preview studio to visualize desktop/mobile SERP search results for Google and Bing.",
+          "Implemented an interactive editor panel with live character counters, Open Graph preview cards (Facebook, LinkedIn), canonical URLs, and robots directives.",
+          "Created live scoring systems, checklist audits, automated HTML meta-tag generators, and clipboard export utilities using pure vanilla ES6 JavaScript."
+        ],
+        "stack": ["HTML5", "CSS3", "JavaScript (ES6)"],
+        "github": "https://github.com/Kimsunly/SEO-Preview.git",
+        "url": "https://seo-preview.vercel.app"
+      },
+      {
+        "title": "Assignment Web",
+        "organization": "Academic Coursework (Midterm Exam)",
+        "period": "May 2026",
+        "role": "Developer",
+        "category": "Web Application",
+        "summary": "A role-based online assignment management system built with Flask, SQLAlchemy, and Bootstrap, supporting Admin, Teacher, and Student roles.",
+        "details": [
+          "Developed a role-based online assignment management system with Flask blueprints, SQLAlchemy ORM, and Flask-Login authentication.",
+          "Supported three distinct user personas: Admin (managing Whitelist and Users), Teacher (class and grading setups), and Student (enrolling and submitting uploads).",
+          "Implemented CSRF token validation, input sanitization, file size verification (up to 16MB), and custom error handlers."
+        ],
+        "stack": ["Python", "Flask", "SQLAlchemy", "SQLite", "Jinja2", "Bootstrap"],
+        "github": "https://github.com/Kimsunly/Assignment-Web.git",
+        "url": [
+          { "label": "Live Demo", "url": "https://assignment-web-szql.onrender.com" },
+          { "label": "YouTube Demo", "url": "https://youtu.be/LuX-5FhAz7M" }
+        ]
+      }
+    ]
+  },
+  "principles": {
+    "label": "/05 ENGINEERING PRINCIPLES",
+    "heading": "How I Think About Software",
+    "description": "These principles guide every architectural decision, every API endpoint, and every line of code I write.",
+    "quote": "Clean architecture enables long-term growth.",
+    "entries": [
+      {
+        "title": "API FIRST",
+        "description": "Design reliable APIs that serve as the foundation of scalable software systems."
+      },
+      {
+        "title": "SECURITY BY DESIGN",
+        "description": "Authentication, authorization, validation, and secure coding practices are part of development — not afterthoughts."
+      },
+      {
+        "title": "CLEAN ARCHITECTURE",
+        "description": "Readable, maintainable, and scalable code always outlives shortcuts."
+      },
+      {
+        "title": "SYSTEM THINKING",
+        "description": "Understand how every component works together, from database schema to deployment pipeline."
+      },
+      {
+        "title": "CONTINUOUS LEARNING",
+        "description": "Technology evolves quickly. Learning never stops. Every project is an opportunity to improve."
+      }
+    ]
+  },
+  "architecture": {
+    "label": "/06 ARCHITECTURE",
+    "heading": "Engineering Reliable Software Systems",
+    "description": "Every feature begins with architecture. Every architecture decision affects maintainability, performance, security, and long-term scalability.",
+    "quote": "Turning complex systems into simple experiences.",
+    "principlesHeading": "ENGINEERING PRINCIPLES",
+    "principlesList": ["API First Design", "Security by Design", "Clean Architecture", "Scalable Systems", "Maintainability"],
+    "apiHeading": "API PHILOSOPHY",
+    "apiText": "REST APIs are designed with consistency, predictability, and maintainability in mind. Every endpoint follows clear naming conventions, proper HTTP methods, structured validation, meaningful status codes, and consistent response formats.",
+    "dbHeading": "DATABASE THINKING",
+    "dbText": "Database design begins before writing code. Tables model real-world relationships while remaining normalized, maintainable, and scalable.",
+    "ariaLabel": "System architecture pipeline",
+    "ariaDesc": "The system architecture follows an 8-layer pipeline design: User/Client sends requests to the REST API layer built with Express.js. Requests pass through Authentication middleware using JWT, then Authorization using RBAC. Controllers handle validation, Services contain business logic, Repositories abstract data access, and MySQL provides persistent storage.",
+    "nodes": [
+      { "label": "LAYER 1", "title": "User / Client", "tech": "Browser", "description": "Entry point for all requests.", "details": ["Sends HTTP requests", "Receives JSON responses", "Handles authentication tokens", "Renders UI or processes data"] },
+      { "label": "LAYER 2", "title": "REST API", "tech": "Express.js", "description": "Central routing layer that dispatches incoming requests.", "details": ["Route definitions", "Request parsing", "Response formatting", "Error handling middleware"] },
+      { "label": "LAYER 3", "title": "Authentication", "tech": "JWT Middleware", "description": "Verifies identity before protected resources can be accessed.", "details": ["JWT token validation", "Access token verification", "Refresh token strategy", "Protected route guards"] },
+      { "label": "LAYER 4", "title": "Authorization", "tech": "RBAC", "description": "Determines what authenticated users are allowed to do.", "details": ["Role-based access control", "Permission checking", "Resource ownership validation", "Admin scope management"] },
+      { "label": "LAYER 5", "title": "Controllers", "tech": "Business Logic", "description": "Handles request validation and orchestrates service calls.", "details": ["Input validation", "Data transformation", "Service coordination", "Response formatting"] },
+      { "label": "LAYER 6", "title": "Services", "tech": "Business Layer", "description": "Contains core business logic and business rules.", "details": ["Business rule execution", "Data processing", "Transaction management", "Cross-cutting concerns"] },
+      { "label": "LAYER 7", "title": "Repository", "tech": "Data Access", "description": "Abstracts database interactions behind a clean interface.", "details": ["Query building", "Data mapping", "Cache integration", "Connection management"] },
+      { "label": "LAYER 8", "title": "Database", "tech": "MySQL", "description": "Persistent storage layer for all application data.", "details": ["Schema management", "Index optimization", "Transaction support", "Data relationships"] }
+    ]
+  },
+  "techStack": {
+    "label": "/07 TECHNOLOGY STACK",
+    "heading": "Tools & Technologies",
+    "description": "Technologies I use to build reliable software systems, from API design to deployment.",
+    "quote": "Continuous learning is part of engineering.",
+    "learning": "Learning",
+    "categories": {
+      "deploy": ["Postman", "Docker", "Linux", "Nginx", "AWS", "GitHub Actions", "Figma"],
+      "tools": ["PostgreSQL", "MongoDB", "Redis", "Git", "VS Code"],
+      "languages": ["Python", "TypeScript", "JavaScript", "MySQL"],
+      "frameworks": ["Next.js", "Vue.js", "Node.js", "Express.js"],
+      "testing": ["Vitest", "NestJS", "React"],
+      "exploring": ["GraphQL", "Prisma"]
+    }
+  },
+  "journey": {
+    "label": "/08 JOURNEY",
+    "heading": "Engineering Journey",
+    "description": "From learning frontend development to leading backend systems — the path that shaped my engineering mindset.",
+    "quote": "Engineering scalable backend solutions.",
+    "entries": [
+      { "year": "2024", "title": "Started Information Technology", "description": "at Royal University of Phnom Penh." },
+      { "year": "2025", "title": "Completed Full Stack Web Development training", "description": "while building real-world software projects." },
+      { "year": "2025", "title": "Led the development of VETIKA", "description": "a student community platform." },
+      { "year": "2025-2026", "title": "Developed Smakjit", "description": "for university capstone." },
+      { "year": "2026", "title": "Led backend development for ANTPAY", "description": "building over 25 REST APIs and deploying to Linux.", "active": true },
+      { "year": "Future", "title": "Growing into a Backend Engineer", "description": "specializing in scalable systems, cloud infrastructure, and distributed architectures.", "future": true }
+    ]
+  },
+  "devConsole": {
+    "label": "/06-B OPERATIONS CONSOLE",
+    "heading": "Developer & Operations Sandbox",
+    "description": "An interactive playground showcasing system-level health, mock REST APIs, and database query consoles.",
+    "quote": "A system is only as good as its observability.",
+    "tabs": {
+      "monitor": "System Monitor",
+      "playground": "API Sandbox",
+      "sql": "SQL Explorer",
+      "terminal": "Developer CLI"
+    },
+    "monitor": {
+      "serverStatus": "SERVER STATUS: ONLINE",
+      "cpu": "CPU Load",
+      "ram": "Memory Usage",
+      "dbPool": "DB Connection Pool",
+      "cacheHit": "Redis Hit Rate",
+      "logHeader": "LIVE SERVER OPERATIONS LOG",
+      "errorButton": "Trigger Server Error"
+    },
+    "api": {
+      "endpointLabel": "Endpoint",
+      "authLabel": "Include JWT Token",
+      "sendButton": "Send Request",
+      "sending": "Sending...",
+      "responseLabel": "Response",
+      "latency": "Latency",
+      "dbTime": "DB Time"
+    },
+    "sql": {
+      "queryLabel": "SQL Query Editor",
+      "runButton": "Run Query",
+      "running": "Executing...",
+      "resultsLabel": "Results Table",
+      "affectedRows": "Rows returned",
+      "templates": {
+        "allProjects": "All Projects",
+        "leaderRoles": "Leader Roles Only",
+        "techSkills": "Active Tech Skills",
+        "learningTech": "Technologies I'm Learning"
+      }
+    },
+    "terminal": {
+      "welcome": "AntOS v1.0.0 (Type 'help' to view options)",
+      "commandNotFound": "Command not found: '{cmd}'. Type 'help' for available commands."
+    }
+  },
+  "certificates": {
+    "label": "/09 CERTIFICATES",
+    "heading": "Verified Credentials",
+    "description": "Certificates and training programs showing ongoing development in software engineering and backend systems.",
+    "quote": "Validation of continuous professional growth.",
+    "credentialId": "Credential ID",
+    "issuedBy": "Issued by",
+    "verify": "Verify",
+    "zoom": "View",
+    "entries": [
+      {
+        "title": "ASEAN Data Science Explorers 2025",
+        "issuer": "ASEAN Foundation & SAP",
+        "date": "Feb 2025",
+        "credentialId": "ASEAN-DSE-2025",
+        "url": "https://aseanfoundation.org/",
+        "image": "/certificates/asean-data-science.png",
+        "skills": ["SAP Analytics Cloud", "Data Science", "Data Analytics", "Data Visualization"]
+      },
+      {
+        "title": "Introduction to AI with Teachable Machine",
+        "issuer": "Cambodia Academy of Digital Technology (CADT)",
+        "date": "Nov 2025",
+        "credentialId": "CADT-AI-2025",
+        "url": "https://cadt.edu.kh/",
+        "image": "/certificates/ai-teachable-machine.png",
+        "skills": ["Artificial Intelligence", "Machine Learning", "Teachable Machine", "Model Training"]
+      },
+      {
+        "title": "UML Unified Modeling Language Course Completion",
+        "issuer": "Mind Luster",
+        "date": "Dec 2025",
+        "credentialId": "e4997c57",
+        "url": "https://www.mindluster.com/",
+        "image": "/certificates/uml-mindluster.png",
+        "skills": ["UML", "System Architecture", "Use Case Diagrams", "Software Design"]
+      },
+      {
+        "title": "Flutter Apps Development: Basic to Advance 2025",
+        "issuer": "Sala-IT",
+        "date": "2025",
+        "credentialId": "SC-Y7danS-51422828",
+        "url": "http://app.salaitdevelopment.com/certificate/51422828",
+        "image": "/certificates/salait-flutter-certificate.jpg",
+        "skills": ["Flutter", "Dart", "Mobile Development", "State Management", "Cross-Platform"]
+      }
+    ]
+  },
+  "contact": {
+    "label": "/10 CONTACT",
+    "heading": "Let's Build Something Meaningful",
+    "description": "I'm always interested in opportunities that allow me to learn, solve challenging engineering problems, and collaborate with talented teams.",
+    "followUp": "Whether it's an internship, full-time role, or freelance project, I'd love to connect.",
+    "quote": "Security is designed, not added.",
+    "getInTouch": "Get In Touch",
+    "downloadResume": "Download Resume",
+    "availabilityLabel": "AVAILABILITY",
+    "available": "Available for opportunities",
+    "responseTime": "Response time:",
+    "responseValue": "Within 24 hours",
+    "preferredContact": "Preferred contact:",
+    "preferredValue": "Email / LinkedIn",
+    "openTo": "Open to:",
+    "openValue": "Internship / Full-time / Freelance",
+    "valuesLabel": "VALUES",
+    "values": ["Experience over comfort.", "Learn continuously.", "Build responsibly.", "Write maintainable software.", "Think before coding.", "Collaborate openly.", "Lead by example.", "Never stop improving."]
+  },
+  "footer": {
+    "logo": "LK_",
+    "tagline": "Building Reliable Software Systems.",
+    "attribution": "Designed and developed by Ly Kimsun.",
+    "techStack": "Built using Vue.js, TypeScript, and modern web technologies.",
+    "navHeading": "Navigation",
+    "connectHeading": "Connect",
+    "systemOnline": "SYSTEM ONLINE",
+    "connectionSecure": "Connection Secure",
+    "version": "v1.0",
+    "copyright": "\u00a9 {year} Ly Kimsun. All rights reserved."
+  },
+  "boot": {
+    "ariaLabel": "System initializing",
+    "systemOnline": "SYSTEM ONLINE",
+    "lines": [
+      "BOOT_SEQUENCE v1.0",
+      "Initializing Modules...",
+      "Loading Portfolio...",
+      "Loading Components...",
+      "Connecting...",
+      "Loading Projects...",
+      "Checking Dependencies...",
+      "Authentication...",
+      "Success."
+    ]
+  },
+  "carousel": {
+    "alt": "Presentation photo",
+    "regionLabel": "Image carousel",
+    "prev": "Previous image",
+    "next": "Next image",
+    "goto": "Go to image {i}"
+  },
+  "techBadge": {
+    "learning": "Learning"
+  },
+  "projectCard": {
+    "featured": "Featured",
+    "viewCaseStudy": "View Case Study",
+    "live": "Live",
+    "projectPreview": "Project Preview",
+    "github": "GitHub"
+  }
+}

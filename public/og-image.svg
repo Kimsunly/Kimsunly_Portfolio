@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+  <line x1="0" y1="0" x2="0" y2="630" stroke="#7C3AED" stroke-width="4"/>
+  <line x1="0" y1="0" x2="1200" y2="0" stroke="#7C3AED" stroke-width="4"/>
+  <line x1="1196" y1="0" x2="1196" y2="630" stroke="#7C3AED" stroke-width="4"/>
+  <line x1="0" y1="626" x2="1200" y2="626" stroke="#7C3AED" stroke-width="4"/>
+  <text x="80" y="280" font-family="'Inter', sans-serif" font-size="72" font-weight="700" fill="#F5F5F5" letter-spacing="-2">LY KIMSUN</text>
+  <text x="80" y="340" font-family="'JetBrains Mono', monospace" font-size="24" fill="#7C3AED" letter-spacing="4">BACKEND-FOCUSED SOFTWARE ENGINEER</text>
+  <text x="80" y="400" font-family="'Inter', sans-serif" font-size="20" fill="#7A7A7A" letter-spacing="0.5">Building reliable software systems through clean architecture,</text>
+  <text x="80" y="430" font-family="'Inter', sans-serif" font-size="20" fill="#7A7A7A" letter-spacing="0.5">scalable APIs, and thoughtful engineering.</text>
+  <rect x="80" y="480" width="120" height="2" fill="#7C3AED"/>
+  <text x="80" y="520" font-family="'JetBrains Mono', monospace" font-size="14" fill="#525252" letter-spacing="2">NODE.JS — EXPRESS — VUE.JS — TYPESCRIPT</text>
+  <line x1="1000" y1="80" x2="1000" y2="550" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="8 8"/>
+  <circle cx="1000" cy="120" r="6" fill="#7C3AED" opacity="0.5"/>
+  <circle cx="1000" cy="180" r="6" fill="#7C3AED" opacity="0.3"/>
+  <circle cx="1000" cy="240" r="6" fill="#7C3AED" opacity="0.1"/>
+</svg>
