@@ -253,7 +253,7 @@ onUnmounted(() => {
 
 <template>
   <section ref="heroSectionRef" class="relative overflow-hidden" aria-label="Hero">
-    <div class="mx-auto max-w-maximum px-8">
+    <div class="mx-auto max-w-maximum px-24 sm:px-16 md:px-32">
       <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-24 py-56 sm:py-64 md:py-80 lg:py-96">
         <div class="max-w-[640px]">
           <div ref="labelRef" class="transition-opacity duration-300">

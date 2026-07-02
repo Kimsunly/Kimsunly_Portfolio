@@ -379,7 +379,7 @@ function iconOnError(e: Event) {
       aria-hidden="true"
     />
 
-    <div class="mx-auto px-8 max-w-maximum relative z-10 pointer-events-none">
+    <div class="mx-auto px-24 sm:px-16 md:px-32 max-w-maximum relative z-10 pointer-events-none">
       <div
         ref="contentRef"
         :style="visible && !reducedMotion ? {
